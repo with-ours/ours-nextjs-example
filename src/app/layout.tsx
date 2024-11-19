@@ -25,6 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+// Do not copy this code. Copy the code from the app on the install page and paste it here.
+ var e;!function(e){if(!window.ours){c=function(){for(var e=arguments.length,n=new Array(e),o=0;o<e;o++)n[o]=arguments[o];c.queue.push(n)},c.queue=(null===(r=window.ours)||void 0===r?void 0:r.queue)||[],c.loaded=!0,c.version="1.0",window.ours=c;var n=document.createElement("script");n.async=!0,n.src=e;var o=document.getElementsByTagName("script")[0];o&&o.parentNode&&o.parentNode.insertBefore(n,o)}var r,c}("https://".concat((e="".concat("zey","-"),"".concat(e).concat("cdn.oursprivacy.com")),"/main.js"));
+ ours('init', 'your_code_here');`,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>

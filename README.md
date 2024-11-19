@@ -7,6 +7,7 @@ Welcome to the **Ours + Next.js** integration example! This repository demonstra
 ## Why Use Ours with Next.js?
 
 Ours is the best choice for privacy-conscious analytics in **Next.js applications**, offering:
+
 - **HIPAA Compliance**: Perfect for healthcare and industries requiring privacy-forward analytics.
 - **Privacy-First Tracking**: No cookies, anonymized IPs, and server-side data handling.
 - **Page View and Event Tracking**: Easily track user behavior with support for page views, clicks, and form submissions.
@@ -20,4 +21,3 @@ Ours is the best choice for privacy-conscious analytics in **Next.js application
 - **Page View Tracking**: Learn how to track page views automatically or on route changes.
 - **Custom Event Tracking**: Log specific user actions like button clicks or form submissions.
 - **Anonymized Data**: Built with compliance and security in mind—your data stays private.
-
