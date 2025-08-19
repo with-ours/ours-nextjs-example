@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { TrackButton } from "@/component/track-button";
 
 export default function Home() {
   return (
@@ -36,14 +37,7 @@ export default function Home() {
             />
             Deploy now
           </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+          <TrackButton />
         </div>
       </main>
       <footer className={styles.footer}>
