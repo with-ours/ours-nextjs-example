@@ -1,10 +1,10 @@
 # Ours Integration with Next.js
 
-Welcome to the **Ours + Next.js** integration example! This repository demonstrates how to seamlessly integrate the **Ours analytics platform** with a Next.js application for tracking page views, custom events, and user interactions. Whether you're building for healthcare, finance, or other privacy-focused industries, Ours provides a powerful, **HIPAA-compliant analytics** solution that ensures your users' data remains secure.
+Welcome to the **Ours Privacy + Next.js** integration example! This repository demonstrates how to seamlessly integrate **Ours Privacy** with a Next.js application for tracking page views, custom events, and user interactions. We can enable you to build powerful, **HIPAA-compliant analytics** solutions specifically designed for healthcare applications, ensuring your patients' data remains secure and compliant with healthcare privacy regulations.
 
 ## Installation Methods
 
-There are **two ways** to install and initialize Ours Analytics in your Next.js application:
+There are **two ways** to install and initialize Ours Privacy in your Next.js application:
 
 ### Method 1: Script Tag Installation (Recommended for simple setups)
 
@@ -16,7 +16,7 @@ There are **two ways** to install and initialize Ours Analytics in your Next.js 
 2. **Add the script tag to your layout**
    - Open `src/app/layout.tsx`
    - Uncomment the script tag in the `<head>` section
-   - Paste your snippet from the Ours dashboard
+   - Paste your snippet from the Ours Privacy dashboard
 
 ```tsx
 // src/app/layout.tsx
@@ -24,7 +24,7 @@ There are **two ways** to install and initialize Ours Analytics in your Next.js 
   <script
     dangerouslySetInnerHTML={{
       __html: `
-        // Paste your Ours Privacy Analytics initialization snippet here
+                 // Paste your Ours Privacy initialization snippet here
         // Example:
         // window.ours = window.ours || function(){(window.ours.q=window.ours.q||[]).push(arguments)};
         // ours('init', 'YOUR_SITE_ID', {track_web_events: true});
@@ -43,7 +43,7 @@ There are **two ways** to install and initialize Ours Analytics in your Next.js 
 
 2. **Create an Analytics Provider**
    - Use the existing `src/providers/analytics-provider.tsx` component
-   - This component runs in client mode and initializes Ours on mount
+   - This component runs in client mode and initializes Ours Privacy on mount
 
 ```tsx
 // src/providers/analytics-provider.tsx
@@ -64,11 +64,11 @@ export function AnalyticsProvider() {
 
 3. **Add the provider to your layout**
    - The provider is already included in `src/app/layout.tsx`
-   - It automatically initializes Ours when the app loads
+   - It automatically initializes Ours Privacy when the app loads
 
 ## Tracking Events
 
-Once Ours is initialized, you can track custom events from any client component:
+Once Ours Privacy is initialized, you can track custom events from any client component:
 
 ```tsx
 // src/component/track-button.tsx
@@ -109,11 +109,11 @@ Both installation methods support the same configuration options:
 1. Choose your preferred installation method above
 2. Replace `'your_code_here'` with your actual Ours site ID
 3. Add tracking calls to your interactive components
-4. Test your integration in the Ours dashboard
+4. Test your integration in the Ours Privacy dashboard
 
 ## Server-Side Tracking
 
-For tracking events from server actions, API routes, or other server-side code, use the **Ours Server SDK**. This allows you to track events directly from your backend without requiring client-side JavaScript.
+For tracking events from server actions, API routes, or other server-side code, use the **Ours Privacy Server SDK**. This allows you to track events directly from your backend without requiring client-side JavaScript.
 
 Visit the [Ours Privacy Track Events API documentation](https://docs.oursprivacy.com/reference/track) for complete server-side integration details, including:
 
@@ -122,4 +122,4 @@ Visit the [Ours Privacy Track Events API documentation](https://docs.oursprivacy
 - Supported languages: Node.js, Ruby, PHP, Python, and Shell examples
 - Authentication and configuration options
 
-For more detailed documentation, visit the [Ours Privacy Analytics documentation](https://docs.ours.com).
+For more detailed documentation, visit the [Ours Privacy documentation](https://docs.ours.com).
