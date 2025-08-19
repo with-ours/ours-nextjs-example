@@ -111,4 +111,15 @@ Both installation methods support the same configuration options:
 3. Add tracking calls to your interactive components
 4. Test your integration in the Ours dashboard
 
+## Server-Side Tracking
+
+For tracking events from server actions, API routes, or other server-side code, use the **Ours Server SDK**. This allows you to track events directly from your backend without requiring client-side JavaScript.
+
+Visit the [Ours Privacy Track Events API documentation](https://docs.oursprivacy.com/reference/track) for complete server-side integration details, including:
+
+- API endpoint: `POST https://api.oursprivacy.com/api/v1/track`
+- Required parameters: Include at least one of `userId`, `externalId`, or `email`
+- Supported languages: Node.js, Ruby, PHP, Python, and Shell examples
+- Authentication and configuration options
+
 For more detailed documentation, visit the [Ours Privacy Analytics documentation](https://docs.ours.com).
