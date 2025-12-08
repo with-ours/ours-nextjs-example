@@ -30,3 +30,4 @@ describe('TrackButton', () => {
 		expect(ours.default.track).toHaveBeenCalledWith('button_click');
 	});
 });
+
