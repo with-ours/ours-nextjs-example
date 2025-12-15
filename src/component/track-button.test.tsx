@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { TrackButton } from './track-button';
@@ -30,4 +31,3 @@ describe('TrackButton', () => {
 		expect(ours.default.track).toHaveBeenCalledWith('button_click');
 	});
 });
-
