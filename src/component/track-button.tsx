@@ -1,6 +1,6 @@
 'use client';
-import styles from '@/app/page.module.css';
 import ours from 'ours-web-sdk';
+import styles from '@/app/page.module.css';
 
 export function TrackButton() {
 	return (
