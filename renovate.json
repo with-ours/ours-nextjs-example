@@ -3,6 +3,9 @@
 	"extends": ["config:recommended"],
 	"rangeStrategy": "pin",
 	"reviewers": ["tylerzey"],
+	"lockFileMaintenance": {
+		"enabled": true
+	},
 	"packageRules": [
 		{
 			"groupName": "all non-major dependencies",
