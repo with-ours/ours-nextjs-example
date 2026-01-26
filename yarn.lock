@@ -401,9 +401,9 @@ __metadata:
   linkType: hard
 
 "@csstools/css-syntax-patches-for-csstree@npm:^1.0.21":
-  version: 1.0.25
-  resolution: "@csstools/css-syntax-patches-for-csstree@npm:1.0.25"
-  checksum: 10c0/a24229cc44cd64642ba76c73f59e7b0b00cfaffd992bf515d32f266aa68b983d9a945ebf8d45c90671d1e2c775a225d8b6257b01fdfeb6602c0c1f7e3faf77c0
+  version: 1.0.26
+  resolution: "@csstools/css-syntax-patches-for-csstree@npm:1.0.26"
+  checksum: 10c0/65ac2a9e3a6908ce503ae1ba354c59ffdda04fef1f4c6e2b64f083c2896fe24fd775861e693e0eb2f84a1e7e0d333eab0fa26b5873268945833b62d7fae97404
   languageName: node
   linkType: hard
 
@@ -1537,11 +1537,11 @@ __metadata:
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.8.3, baseline-browser-mapping@npm:^2.9.0":
-  version: 2.9.17
-  resolution: "baseline-browser-mapping@npm:2.9.17"
+  version: 2.9.18
+  resolution: "baseline-browser-mapping@npm:2.9.18"
   bin:
     baseline-browser-mapping: dist/cli.js
-  checksum: 10c0/c0d344bc43aabe2d2f26de1b5831423ae7dc5da5ffb0f68404d07847901f1df81f3645a939dd76b1b7328fded13bcd72d86da46913839d10d20e51df162639de
+  checksum: 10c0/869bdbb2784f8b1bc49b52d54ea48bf9ea6da8309195e3a0b3f4625197b8187a9b557b1d02f1b6b6dd51f163840a87db259e2b791eed35f0c5fddf3110c4cf28
   languageName: node
   linkType: hard
 
@@ -1589,9 +1589,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001579, caniuse-lite@npm:^1.0.30001759":
-  version: 1.0.30001765
-  resolution: "caniuse-lite@npm:1.0.30001765"
-  checksum: 10c0/2bab28b322ec040dde2b6f56019ffd1e0bbd719111e45f58cb0fb06a783812d8ba8df65755320fd253aa1926dffc7bf0864adc11f6b231ac2b3a5b8221199c29
+  version: 1.0.30001766
+  resolution: "caniuse-lite@npm:1.0.30001766"
+  checksum: 10c0/cecc8f9a3758c486fc68434a3cca5f4ca7077db5ac9cdb1689786abf63c4aa9891bf70f2df2c3e549d5e284e8da36a218d0e131ebb26dd59280bc99db49640f6
   languageName: node
   linkType: hard
 
@@ -1717,9 +1717,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.263":
-  version: 1.5.277
-  resolution: "electron-to-chromium@npm:1.5.277"
-  checksum: 10c0/d9bfbd42f03eb595f609d4c369a6d565eca158dd957ef5aff69e6c8a7ea6be7a5618fbae3c9cd2f724cbff2aa32a137450c48f833d211ae09f57b13510280dab
+  version: 1.5.278
+  resolution: "electron-to-chromium@npm:1.5.278"
+  checksum: 10c0/50ca2da7e509fce7f077d720755e46190cf942451bb229a78353039cf17933ea73e543f598bf61e2899b908750f111b2c24ea61194c1d98c0e1eb6c9b1438161
   languageName: node
   linkType: hard
 
@@ -2132,9 +2132,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^11.0.0, lru-cache@npm:^11.1.0, lru-cache@npm:^11.2.1, lru-cache@npm:^11.2.4":
-  version: 11.2.4
-  resolution: "lru-cache@npm:11.2.4"
-  checksum: 10c0/4a24f9b17537619f9144d7b8e42cd5a225efdfd7076ebe7b5e7dc02b860a818455201e67fbf000765233fe7e339d3c8229fc815e9b58ee6ede511e07608c19b2
+  version: 11.2.5
+  resolution: "lru-cache@npm:11.2.5"
+  checksum: 10c0/cc98958d25dddf1c8a8cbdc49588bd3b24450e8dfa78f32168fd188a20d4a0331c7406d0f3250c86a46619ee288056fd7a1195e8df56dc8a9592397f4fbd8e1d
   languageName: node
   linkType: hard
 
