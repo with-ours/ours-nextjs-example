@@ -675,6 +675,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@oursprivacy/cdp-sdk@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@oursprivacy/cdp-sdk@npm:1.0.1"
+  checksum: 10c0/0414131dd446ad8ce954c84b9eab3ddea8c75da7654c4a69e68467435f3c2291c04c42bd132eaca44ae040b6d3d2c6fc512b841443772ff4fb3f9a70d7c68ce6
+  languageName: node
+  linkType: hard
+
 "@oxc-project/types@npm:=0.122.0":
   version: 0.122.0
   resolution: "@oxc-project/types@npm:0.122.0"
@@ -1974,6 +1981,7 @@ __metadata:
   resolution: "ours-nextjs-example@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.4.8"
+    "@oursprivacy/cdp-sdk": "npm:1.0.1"
     "@testing-library/dom": "npm:10.4.1"
     "@testing-library/jest-dom": "npm:6.9.1"
     "@testing-library/react": "npm:16.3.2"
@@ -1985,20 +1993,12 @@ __metadata:
     "@vitest/coverage-v8": "npm:4.1.0"
     jsdom: "npm:29.0.1"
     next: "npm:16.2.1"
-    ours-web-sdk: "npm:1.0.1"
     react: "npm:19.2.4"
     react-dom: "npm:19.2.4"
     typescript: "npm:5.9.3"
     vitest: "npm:4.1.0"
   languageName: unknown
   linkType: soft
-
-"ours-web-sdk@npm:1.0.1":
-  version: 1.0.1
-  resolution: "ours-web-sdk@npm:1.0.1"
-  checksum: 10c0/e0982fd5eae07a0d4245a8ae3ebbcfdf7094b1061f4deddeaa13357983ca2ba0d9600fcc3cdf2630e4cd1a0b29cc4ab853351e0c01f8696bcbb532d85892f1bf
-  languageName: node
-  linkType: hard
 
 "p-map@npm:^7.0.2":
   version: 7.0.4

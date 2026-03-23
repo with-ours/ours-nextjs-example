@@ -36,9 +36,11 @@ There are **two ways** to install and initialize Ours Privacy in your Next.js ap
 
 ### Method 2: NPM Package Installation (Recommended for advanced setups)
 
-1. **Install the Ours SDK**
+1. **Install the Ours CDP SDK**
    ```bash
-   npm install ours-web-sdk
+   npm install @oursprivacy/cdp-sdk
+   # or
+   yarn add @oursprivacy/cdp-sdk
    ```
 
 2. **Create an Analytics Provider**
@@ -49,13 +51,11 @@ There are **two ways** to install and initialize Ours Privacy in your Next.js ap
 // src/providers/analytics-provider.tsx
 "use client";
 import { useEffect } from "react";
-import ours from "ours-web-sdk";
+import ours from "@oursprivacy/cdp-sdk";
 
 export function AnalyticsProvider() {
   useEffect(() => {
-    // This only runs on the client
-    console.log("Init Ours here");
-    ours.init('your_code_here', {track_web_events: true})
+    ours.init('your_code_here', { track_web_events: true });
   }, []);
 
   return null; // No UI, just initialization
@@ -74,12 +74,12 @@ Once Ours Privacy is initialized, you can track custom events from any client co
 // src/component/track-button.tsx
 "use client"
 import styles from "@/app/page.module.css";
-import ours from "ours-web-sdk";
+import ours from "@oursprivacy/cdp-sdk";
 
 export function TrackButton() {
   return (
-    <button 
-      className={styles.secondary} 
+    <button
+      className={styles.secondary}
       onClick={() => ours.track('button_click')}
     >
       Track me
@@ -88,10 +88,32 @@ export function TrackButton() {
 }
 ```
 
+### Identifying Users
+
+Use `ours.identify()` to associate events with a known user:
+
+```tsx
+import ours from "@oursprivacy/cdp-sdk";
+
+ours.identify({
+  email: 'user@example.com',
+});
+```
+
+### Resetting User Identity
+
+Call `ours.reset()` when a user logs out to clear the current identity:
+
+```tsx
+import ours from "@oursprivacy/cdp-sdk";
+
+ours.reset();
+```
+
 ### Key Points for Tracking:
 
 - **Client Components Only**: All tracking calls must be made from components marked with `"use client"`
-- **Import the SDK**: Import `ours` from `"ours-web-sdk"` in any component that needs to track events
+- **Import the SDK**: Import `ours` from `"@oursprivacy/cdp-sdk"` in any component that needs to track events
 - **Event Names**: Use descriptive event names like `'button_click'`, `'form_submit'`, `'page_view'`, etc.
 
 ## Configuration Options
@@ -99,15 +121,19 @@ export function TrackButton() {
 Both installation methods support the same configuration options:
 
 - `track_web_events`: Enable automatic tracking of page views and user interactions
-- Custom event tracking with `ours.track(eventName, properties)`
+- Custom event tracking with `ours.track(eventName, eventProperties, userProperties, defaultPropertyOverrides)`
+- User identification with `ours.identify(userProperties)`
+- Identity reset with `ours.reset()`
 - Privacy-focused data collection that respects user consent
+
+For the full list of initialization options, see the [Web SDK documentation](https://docs.oursprivacy.com/docs/web-sdk-javascript#initialization).
 
 ---
 
 ## Getting Started
 
 1. Choose your preferred installation method above
-2. Replace `'your_code_here'` with your actual Ours site ID
+2. Replace `'your_code_here'` with your actual Ours project token
 3. Add tracking calls to your interactive components
 4. Test your integration in the Ours Privacy dashboard
 

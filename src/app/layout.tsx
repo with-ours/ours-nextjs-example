@@ -30,7 +30,7 @@ export default function RootLayout({
 				{/* As stated in the README, you can initialize Ours Analytics in two ways:
           
           1. Using the NPM package (recommended):
-             - Import 'ours-web-sdk'
+             - Import '@oursprivacy/cdp-sdk'
              - Use the <AnalyticsProvider /> component (already implemented below)
           
           2. Using the script tag (alternative):

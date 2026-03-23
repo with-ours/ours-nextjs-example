@@ -4,8 +4,8 @@ import { userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { TrackButton } from './track-button';
 
-// Mock the ours-web-sdk
-vi.mock('ours-web-sdk', () => ({
+// Mock the @oursprivacy/cdp-sdk
+vi.mock('@oursprivacy/cdp-sdk', () => ({
 	default: {
 		track: vi.fn(),
 	},
@@ -21,7 +21,7 @@ describe('TrackButton', () => {
 
 	it('calls ours.track when clicked', async () => {
 		const user = userEvent.setup();
-		const ours = await import('ours-web-sdk');
+		const ours = await import('@oursprivacy/cdp-sdk');
 
 		render(<TrackButton />);
 		const button = screen.getByRole('button', { name: /track me/i });

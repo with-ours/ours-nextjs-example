@@ -1,5 +1,5 @@
 'use client';
-import ours from 'ours-web-sdk';
+import ours from '@oursprivacy/cdp-sdk';
 import styles from '@/app/page.module.css';
 
 export function TrackButton() {
