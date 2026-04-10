@@ -1,0 +1,25 @@
+.section {
+	background: var(--bg-card);
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	padding: 2rem;
+}
+
+.header {
+	margin-bottom: 1.5rem;
+}
+
+.title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--text-primary);
+	margin-bottom: 0.5rem;
+	font-family: var(--font-geist-sans);
+}
+
+.description {
+	font-size: 0.875rem;
+	color: var(--text-muted);
+	line-height: 1.5;
+	font-family: var(--font-geist-sans);
+}

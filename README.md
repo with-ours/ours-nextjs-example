@@ -1,151 +1,129 @@
-# Ours Integration with Next.js
+# Ours Privacy + Next.js Demo
 
-Welcome to the **Ours Privacy + Next.js** integration example! This repository demonstrates how to seamlessly integrate **Ours Privacy** with a Next.js application for tracking page views, custom events, and user interactions. We can enable you to build powerful, **HIPAA-compliant analytics** solutions specifically designed for healthcare applications, ensuring your patients' data remains secure and compliant with healthcare privacy regulations.
+This repo is a working reference for integrating the [Ours Privacy](https://docs.oursprivacy.com/) **CDP** (Customer Data Platform) and **CMP** (Consent Management Platform) into a Next.js application. Browse the code to see how each product is installed, initialized, and used.
 
-## Installation Methods
+## What This Repo Demonstrates
 
-There are **two ways** to install and initialize Ours Privacy in your Next.js application:
+### [`/`](src/app/(cdp-npm)/page.tsx) — CDP via NPM
 
-### Method 1: Script Tag Installation (Recommended for simple setups)
+Shows how to install and use the CDP through the [`@oursprivacy/cdp-sdk`](https://www.npmjs.com/package/@oursprivacy/cdp-sdk) NPM package. This approach gives you a typed module import (`import ours from '@oursprivacy/cdp-sdk'`) and works well if you're already using a bundler. Track events with `ours.track()` and identify users with `ours.identify()`.
 
-1. **Get your snippet from the Ours Privacy Admin Portal**
-   - Log into your Ours dashboard
-   - Navigate to the integration settings
-   - Copy the provided JavaScript snippet
+### [`/cdn`](src/app/(cdp-cdn)/cdn/page.tsx) — CDP via CDN (recommended)
 
-2. **Add the script tag to your layout**
-   - Open `src/app/layout.tsx`
-   - Uncomment the script tag in the `<head>` section
-   - Paste your snippet from the Ours Privacy dashboard
+Shows how to install the CDP with a single script tag — no package manager or build step required. The script creates a global `ours()` function that queues calls until the SDK loads, so you can call `ours('track', ...)` immediately without waiting for a load event. **This is the recommended approach for most sites.**
 
-```tsx
-// src/app/layout.tsx
-<head>
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `
-                 // Paste your Ours Privacy initialization snippet here
-        // Example:
-        // window.ours = window.ours || function(){(window.ours.q=window.ours.q||[]).push(arguments)};
-        // ours('init', 'YOUR_SITE_ID', {track_web_events: true});
-      `
-    }}
-  />
-</head>
-```
+### [`/cmp`](src/app/(cmp)/cmp/page.tsx) — Consent Management Platform
 
-### Method 2: NPM Package Installation (Recommended for advanced setups)
+Shows the current React/Next.js-friendly CMP integration. In this demo, the CMP is loaded with `next/script` using `strategy="afterInteractive"` so the banner can render without colliding with Next.js hydration. This improves reliability for SSR React apps, but it means anything that executes before CMP boot must be manually blocked in markup.
 
-1. **Install the Ours CDP SDK**
-   ```bash
-   npm install @oursprivacy/cdp-sdk
-   # or
-   yarn add @oursprivacy/cdp-sdk
-   ```
+### [`/integration`](src/app/(cdp-cdn-cmp)/integration/page.tsx) — CMP + CDP Together
 
-2. **Create an Analytics Provider**
-   - Use the existing `src/providers/analytics-provider.tsx` component
-   - This component runs in client mode and initializes Ours Privacy on mount
+Shows the same React/Next.js compatibility pattern with both products on the page. Both scripts load `afterInteractive`, which avoids hydration conflicts but forfeits strict first-load blocking for anything that runs before the CMP initializes.
+
+## Why Layout Files?
+
+In Next.js, a [layout](https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates) is a component that wraps every page in its directory. Layouts are the right place to load analytics and consent scripts because:
+
+- **They run once** — the layout mounts when a visitor enters that section of your site. Scripts initialize once and persist across page navigations.
+- **They wrap all child pages** — every page inside the layout folder automatically gets the scripts without repeating code.
+- **They compose** — the root layout provides global things (nav, fonts, CSS), and nested layouts add product-specific scripts on top.
+
+This project has four product-specific nested layouts:
+
+### CDP via CDN — [`src/app/(cdp-cdn)/layout.tsx`](src/app/(cdp-cdn)/layout.tsx)
+
+The recommended starting point. This layout injects the CDP loader snippet using `next/script`:
 
 ```tsx
-// src/providers/analytics-provider.tsx
-"use client";
-import { useEffect } from "react";
-import ours from "@oursprivacy/cdp-sdk";
+import Script from 'next/script';
 
-export function AnalyticsProvider() {
-  useEffect(() => {
-    ours.init('your_code_here', { track_web_events: true });
-  }, []);
-
-  return null; // No UI, just initialization
-}
-```
-
-3. **Add the provider to your layout**
-   - The provider is already included in `src/app/layout.tsx`
-   - It automatically initializes Ours Privacy when the app loads
-
-## Tracking Events
-
-Once Ours Privacy is initialized, you can track custom events from any client component:
-
-```tsx
-// src/component/track-button.tsx
-"use client"
-import styles from "@/app/page.module.css";
-import ours from "@oursprivacy/cdp-sdk";
-
-export function TrackButton() {
+export default function Layout({ children }) {
   return (
-    <button
-      className={styles.secondary}
-      onClick={() => ours.track('button_click')}
-    >
-      Track me
-    </button>
+    <>
+      <Script
+        id="ours-cdp"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          // Paste your snippet from the Ours Privacy dashboard here.
+          // Go to app.oursprivacy.com → Settings → Install to copy it.
+          __html: `...`,
+        }}
+      />
+      {children}
+    </>
   );
 }
 ```
 
-### Identifying Users
+### CMP only — [`src/app/(cmp)/layout.tsx`](src/app/(cmp)/layout.tsx)
 
-Use `ours.identify()` to associate events with a known user:
-
-```tsx
-import ours from "@oursprivacy/cdp-sdk";
-
-ours.identify({
-  email: 'user@example.com',
-});
-```
-
-### Resetting User Identity
-
-Call `ours.reset()` when a user logs out to clear the current identity:
+This layout loads just the CMP for the standalone `/cmp` route. It uses `afterInteractive` for the current Next.js/React integration pattern:
 
 ```tsx
-import ours from "@oursprivacy/cdp-sdk";
-
-ours.reset();
+<link rel="stylesheet" href="https://cdn.oursprivacy.com/consent.css" />
+<Script
+  src="https://cdn.oursprivacy.com/cmp-init?token=YOUR_CMP_TOKEN"
+  strategy="afterInteractive"
+/>
 ```
 
-### Key Points for Tracking:
+This is not equivalent to a strict early-head install. It trades away first-load automatic blocking for framework compatibility. If your page includes scripts or embeds in the initial HTML that must stay inert until consent is known, mark them up with the CMP's manual blocking attributes so they do not execute before the CMP boots.
 
-- **Client Components Only**: All tracking calls must be made from components marked with `"use client"`
-- **Import the SDK**: Import `ours` from `"@oursprivacy/cdp-sdk"` in any component that needs to track events
-- **Event Names**: Use descriptive event names like `'button_click'`, `'form_submit'`, `'page_view'`, etc.
+### CDP via CDN + CMP — [`src/app/(cdp-cdn-cmp)/layout.tsx`](src/app/(cdp-cdn-cmp)/layout.tsx)
 
-## Configuration Options
+For the combined setup in this demo, both scripts are loaded `afterInteractive`:
 
-Both installation methods support the same configuration options:
+```tsx
+<link rel="stylesheet" href="https://cdn.oursprivacy.com/consent.css" />
+<Script
+  src="https://cdn.oursprivacy.com/cmp-init?token=YOUR_CMP_TOKEN"
+  strategy="afterInteractive"
+/>
+<Script
+  id="ours-cdp"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{ __html: `...` }}
+/>
+```
 
-- `track_web_events`: Enable automatic tracking of page views and user interactions
-- Custom event tracking with `ours.track(eventName, eventProperties, userProperties, defaultPropertyOverrides)`
-- User identification with `ours.identify(userProperties)`
-- Identity reset with `ours.reset()`
-- Privacy-focused data collection that respects user consent
+This keeps the UI stable in Next.js, but it means the CMP only starts automatically blocking once it has initialized on the client. Use manual blocking for any script or resource that is present in the initial page HTML and must remain blocked before that point. See the [Cookie Consent docs](https://docs.oursprivacy.com/docs/cookie-consent) for configuration options.
 
-For the full list of initialization options, see the [Web SDK documentation](https://docs.oursprivacy.com/docs/web-sdk-javascript#initialization).
+## React/Next.js Story
 
----
+The current guidance for SSR React apps is:
 
-## Getting Started
+- Load the CMP with `afterInteractive` to avoid hydration conflicts.
+- Keep using automatic blocking for anything loaded after the CMP initializes.
+- Manually block any scripts or resources that appear in the initial HTML and must not execute before consent is known.
 
-1. Choose your preferred installation method above
-2. Replace `'your_code_here'` with your actual Ours project token
-3. Add tracking calls to your interactive components
-4. Test your integration in the Ours Privacy dashboard
+Manual blocking usually means rendering the resource in an inert form in your HTML, for example:
 
-## Server-Side Tracking
+```html
+<script
+  type="text/plain"
+  data-category="analytics"
+  src="https://www.google-analytics.com/analytics.js"
+></script>
+```
 
-For tracking events from server actions, API routes, or other server-side code, use the **Ours Privacy Server SDK**. This allows you to track events directly from your backend without requiring client-side JavaScript.
+That keeps the browser from executing the script before the CMP boots. Once the CMP initializes and the user grants consent, it can enable the script.
 
-Visit the [Ours Privacy Track Events API documentation](https://docs.oursprivacy.com/reference/track) for complete server-side integration details, including:
+This is the current React/Next.js integration guidance for SSR apps. If you need strict first-load blocking guarantees for everything on the page, use manual blocking for anything present in the initial HTML and ensure third-party loaders do not run before the CMP initializes.
 
-- API endpoint: `POST https://api.oursprivacy.com/api/v1/track`
-- Required parameters: Include at least one of `userId`, `externalId`, or `email`
-- Supported languages: Node.js, Ruby, PHP, Python, and Shell examples
-- Authentication and configuration options
+### CDP via NPM — [`src/app/(cdp-npm)/layout.tsx`](src/app/(cdp-npm)/layout.tsx)
 
-For more detailed documentation, visit the [Ours Privacy documentation](https://docs.ours.com).
+If you prefer a package import over a script tag, this layout wraps pages with an [`AnalyticsProvider`](src/providers/analytics-provider.tsx) component that calls `ours.init()` in a `useEffect`. You can then `import ours from '@oursprivacy/cdp-sdk'` in any client component to track events.
+
+```bash
+npm install @oursprivacy/cdp-sdk
+```
+
+See the [provider source](src/providers/analytics-provider.tsx) and the [track button source](src/components/track-button/track-button.tsx) for the full pattern.
+
+## Docs
+
+- [Ours Privacy Docs](https://docs.oursprivacy.com/)
+- [Understanding the Event Flow](https://docs.oursprivacy.com/docs/understanding-the-event-flow)
+- [Web SDK (JavaScript)](https://docs.oursprivacy.com/docs/web-sdk-javascript)
+- [Cookie Consent](https://docs.oursprivacy.com/docs/cookie-consent)
+- [`@oursprivacy/cdp-sdk` on NPM](https://www.npmjs.com/package/@oursprivacy/cdp-sdk)

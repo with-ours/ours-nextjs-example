@@ -1,0 +1,49 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.category {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.625rem 0.875rem;
+	border-radius: 8px;
+	background: rgba(0, 23, 34, 0.6);
+	border: 1px solid var(--border-color);
+}
+
+.categoryName {
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--text-primary);
+	font-family: var(--font-geist-sans);
+	text-transform: capitalize;
+}
+
+.badge {
+	padding: 0.25rem 0.625rem;
+	border-radius: 100px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	font-family: var(--font-geist-mono);
+}
+
+.accepted {
+	background: rgba(70, 242, 163, 0.15);
+	color: var(--success);
+}
+
+.rejected {
+	background: rgba(190, 81, 80, 0.15);
+	color: var(--danger);
+}
+
+.loading {
+	padding: 1.5rem;
+	text-align: center;
+	color: var(--text-muted);
+	font-size: 0.875rem;
+	font-family: var(--font-geist-sans);
+}

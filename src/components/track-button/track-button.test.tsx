@@ -4,7 +4,6 @@ import { userEvent } from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { TrackButton } from './track-button';
 
-// Mock the @oursprivacy/cdp-sdk
 vi.mock('@oursprivacy/cdp-sdk', () => ({
 	default: {
 		track: vi.fn(),
@@ -15,7 +14,7 @@ describe('TrackButton', () => {
 	it('renders the button with correct text', () => {
 		render(<TrackButton />);
 		expect(
-			screen.getByRole('button', { name: /track me/i }),
+			screen.getByRole('button', { name: /track event/i }),
 		).toBeInTheDocument();
 	});
 
@@ -24,10 +23,26 @@ describe('TrackButton', () => {
 		const ours = await import('@oursprivacy/cdp-sdk');
 
 		render(<TrackButton />);
-		const button = screen.getByRole('button', { name: /track me/i });
+		const button = screen.getByRole('button', {
+			name: /track event/i,
+		});
 
 		await user.click(button);
 
 		expect(ours.default.track).toHaveBeenCalledWith('button_click');
+	});
+
+	it('calls onTrack callback when clicked', async () => {
+		const user = userEvent.setup();
+		const onTrack = vi.fn();
+
+		render(<TrackButton onTrack={onTrack} />);
+		const button = screen.getByRole('button', {
+			name: /track event/i,
+		});
+
+		await user.click(button);
+
+		expect(onTrack).toHaveBeenCalled();
 	});
 });
