@@ -3,8 +3,8 @@
 	"extends": ["config:recommended"],
 	"rangeStrategy": "pin",
 	"reviewers": ["tylerzey"],
-	"lockFileMaintenance": {
-		"enabled": true
+	"toolSettings": {
+		"nodeMaxMemory": 1024
 	},
 	"packageRules": [
 		{
