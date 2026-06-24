@@ -1,8 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import { DemoSection } from '@/components/demo-section/demo-section';
 import styles from '@/components/page-layout/page-layout.module.css';
-import { useState } from 'react';
 
 export default function CmpFormsPage() {
 	const [email, setEmail] = useState('');
@@ -12,7 +12,9 @@ export default function CmpFormsPage() {
 	return (
 		<div className={styles.page}>
 			<div className={styles.hero}>
-				<span className={`${styles.badge} ${styles.badgeCmp}`}>CMP Test Page</span>
+				<span className={`${styles.badge} ${styles.badgeCmp}`}>
+					CMP Test Page
+				</span>
 				<h1 className={styles.heading}>Forms and State Updates</h1>
 				<p className={styles.subheading}>
 					Use this page to test controlled inputs, checkbox toggles, and live
@@ -42,7 +44,9 @@ export default function CmpFormsPage() {
 							/>
 						</label>
 
-						<label style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+						<label
+							style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}
+						>
 							<input
 								type="checkbox"
 								checked={marketing}
@@ -51,7 +55,9 @@ export default function CmpFormsPage() {
 							<span>Marketing updates</span>
 						</label>
 
-						<label style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+						<label
+							style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}
+						>
 							<input
 								type="checkbox"
 								checked={productUpdates}
@@ -66,17 +72,27 @@ export default function CmpFormsPage() {
 					title="Live Preview"
 					description="This panel updates on every keystroke and checkbox change."
 				>
-					<div style={{ display: 'grid', gap: '0.75rem', color: 'var(--text-secondary)' }}>
+					<div
+						style={{
+							display: 'grid',
+							gap: '0.75rem',
+							color: 'var(--text-secondary)',
+						}}
+					>
 						<div>
 							<strong style={{ color: 'var(--text-primary)' }}>Email:</strong>{' '}
 							{email || 'No value yet'}
 						</div>
 						<div>
-							<strong style={{ color: 'var(--text-primary)' }}>Marketing:</strong>{' '}
+							<strong style={{ color: 'var(--text-primary)' }}>
+								Marketing:
+							</strong>{' '}
 							{marketing ? 'Enabled' : 'Disabled'}
 						</div>
 						<div>
-							<strong style={{ color: 'var(--text-primary)' }}>Product updates:</strong>{' '}
+							<strong style={{ color: 'var(--text-primary)' }}>
+								Product updates:
+							</strong>{' '}
 							{productUpdates ? 'Enabled' : 'Disabled'}
 						</div>
 					</div>
