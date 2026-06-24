@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import { DemoSection } from '@/components/demo-section/demo-section';
 import styles from '@/components/page-layout/page-layout.module.css';
-import { useState } from 'react';
 
 const cards = [
 	{
@@ -40,7 +40,9 @@ export default function CmpGalleryPage() {
 	return (
 		<div className={styles.page}>
 			<div className={styles.hero}>
-				<span className={`${styles.badge} ${styles.badgeCmp}`}>CMP Test Page</span>
+				<span className={`${styles.badge} ${styles.badgeCmp}`}>
+					CMP Test Page
+				</span>
 				<h1 className={styles.heading}>Gallery and Visual Updates</h1>
 				<p className={styles.subheading}>
 					Flip list order, switch cards, and trigger image updates while the
@@ -55,7 +57,10 @@ export default function CmpGalleryPage() {
 				>
 					<div style={{ display: 'grid', gap: '0.75rem' }}>
 						<div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-							<button type="button" onClick={() => setReverseOrder((value) => !value)}>
+							<button
+								type="button"
+								onClick={() => setReverseOrder((value) => !value)}
+							>
 								{reverseOrder ? 'Restore order' : 'Reverse order'}
 							</button>
 							{orderedCards.map((card) => (
@@ -73,7 +78,9 @@ export default function CmpGalleryPage() {
 												? 'none'
 												: '1px solid var(--accent-primary)',
 										color:
-											selectedCard === card.id ? '#fff' : 'var(--accent-highlight)',
+											selectedCard === card.id
+												? '#fff'
+												: 'var(--accent-highlight)',
 									}}
 								>
 									{card.title}
@@ -81,7 +88,13 @@ export default function CmpGalleryPage() {
 							))}
 						</div>
 
-						<div style={{ display: 'grid', gap: '0.5rem', color: 'var(--text-secondary)' }}>
+						<div
+							style={{
+								display: 'grid',
+								gap: '0.5rem',
+								color: 'var(--text-secondary)',
+							}}
+						>
 							{orderedCards.map((card) => (
 								<div key={card.id}>
 									{card.id === selectedCard ? '●' : '○'} {card.title}
@@ -113,7 +126,9 @@ export default function CmpGalleryPage() {
 							width={activeCard.width}
 							height={activeCard.height}
 						/>
-						<div style={{ color: 'var(--text-secondary)' }}>{activeCard.title}</div>
+						<div style={{ color: 'var(--text-secondary)' }}>
+							{activeCard.title}
+						</div>
 					</div>
 				</DemoSection>
 			</div>

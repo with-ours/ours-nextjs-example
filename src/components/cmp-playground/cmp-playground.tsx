@@ -70,15 +70,18 @@ export function CmpPlayground({ children }: { children: ReactNode }) {
 							</button>
 						</div>
 						<p className={styles.details}>
-							Use these controls after route changes to see whether the CMP stays
-							stable or disappears.
+							Use these controls after route changes to see whether the CMP
+							stays stable or disappears.
 						</p>
 					</div>
 
 					<div className={styles.card}>
 						<div className={styles.cardTitle}>Layout Interactions</div>
 						<div className={styles.buttonRow}>
-							<button type="button" onClick={() => setCount((value) => value + 1)}>
+							<button
+								type="button"
+								onClick={() => setCount((value) => value + 1)}
+							>
 								Increment counter
 							</button>
 							<button
@@ -113,7 +116,9 @@ export function CmpPlayground({ children }: { children: ReactNode }) {
 							/>
 						</div>
 						<p className={styles.details}>
-							{note ? `Live value: ${note}` : 'Typing here forces client updates in the layout.'}
+							{note
+								? `Live value: ${note}`
+								: 'Typing here forces client updates in the layout.'}
 						</p>
 					</div>
 				</div>
