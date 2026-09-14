@@ -112,18 +112,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/biome@npm:2.5.11"
+"@biomejs/biome@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/biome@npm:2.5.12"
   dependencies:
-    "@biomejs/cli-darwin-arm64": "npm:2.5.11"
-    "@biomejs/cli-darwin-x64": "npm:2.5.11"
-    "@biomejs/cli-linux-arm64": "npm:2.5.11"
-    "@biomejs/cli-linux-arm64-musl": "npm:2.5.11"
-    "@biomejs/cli-linux-x64": "npm:2.5.11"
-    "@biomejs/cli-linux-x64-musl": "npm:2.5.11"
-    "@biomejs/cli-win32-arm64": "npm:2.5.11"
-    "@biomejs/cli-win32-x64": "npm:2.5.11"
+    "@biomejs/cli-darwin-arm64": "npm:2.5.12"
+    "@biomejs/cli-darwin-x64": "npm:2.5.12"
+    "@biomejs/cli-linux-arm64": "npm:2.5.12"
+    "@biomejs/cli-linux-arm64-musl": "npm:2.5.12"
+    "@biomejs/cli-linux-x64": "npm:2.5.12"
+    "@biomejs/cli-linux-x64-musl": "npm:2.5.12"
+    "@biomejs/cli-win32-arm64": "npm:2.5.12"
+    "@biomejs/cli-win32-x64": "npm:2.5.12"
   dependenciesMeta:
     "@biomejs/cli-darwin-arm64":
       optional: true
@@ -143,62 +143,62 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10c0/6d76d2b2e2fcf01e40e0e65dd249b6a6e003b7db716fb3bcb17789bef644fa7353be62c595ae7a25831d80515b5b311b22f4660f82446f55843a0fdd3458f32a
+  checksum: 10c0/2433c73b3a3e2a1405ebe04f8fa54185fa33097f199c2527ee259525c223998d26d6bcf0ee6bfca4164c6dda5e7d975cbd38a42f57ab38dc1c1f91f9fea2b957
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/cli-darwin-arm64@npm:2.5.11"
+"@biomejs/cli-darwin-arm64@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/cli-darwin-arm64@npm:2.5.12"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/cli-darwin-x64@npm:2.5.11"
+"@biomejs/cli-darwin-x64@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/cli-darwin-x64@npm:2.5.12"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.5.11"
+"@biomejs/cli-linux-arm64-musl@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.5.12"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/cli-linux-arm64@npm:2.5.11"
+"@biomejs/cli-linux-arm64@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/cli-linux-arm64@npm:2.5.12"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/cli-linux-x64-musl@npm:2.5.11"
+"@biomejs/cli-linux-x64-musl@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/cli-linux-x64-musl@npm:2.5.12"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/cli-linux-x64@npm:2.5.11"
+"@biomejs/cli-linux-x64@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/cli-linux-x64@npm:2.5.12"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/cli-win32-arm64@npm:2.5.11"
+"@biomejs/cli-win32-arm64@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/cli-win32-arm64@npm:2.5.12"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:2.5.11":
-  version: 2.5.11
-  resolution: "@biomejs/cli-win32-x64@npm:2.5.11"
+"@biomejs/cli-win32-x64@npm:2.5.12":
+  version: 2.5.12
+  resolution: "@biomejs/cli-win32-x64@npm:2.5.12"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -618,65 +618,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/env@npm:16.3.3"
-  checksum: 10c0/6f300379d8ddc476d09897e97c26d593b60973bf425b093b96fdb4459f9547e8d05f3aca82a59bf0c1711b96b6a615b3483a396aec1c36a91526b9617260ba92
+"@next/env@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/env@npm:16.3.4"
+  checksum: 10c0/6a9adf69b7aaa1d13e255aa158ee7accce81c6c23dfc2c786b3fc6f0f4c5354b3c67e7d60be5521d322d2164ba86fc01b9dc2f3f18282f6162760de99e19fd13
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/swc-darwin-arm64@npm:16.3.3"
+"@next/swc-darwin-arm64@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/swc-darwin-arm64@npm:16.3.4"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/swc-darwin-x64@npm:16.3.3"
+"@next/swc-darwin-x64@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/swc-darwin-x64@npm:16.3.4"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/swc-linux-arm64-gnu@npm:16.3.3"
+"@next/swc-linux-arm64-gnu@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/swc-linux-arm64-gnu@npm:16.3.4"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/swc-linux-arm64-musl@npm:16.3.3"
+"@next/swc-linux-arm64-musl@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/swc-linux-arm64-musl@npm:16.3.4"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/swc-linux-x64-gnu@npm:16.3.3"
+"@next/swc-linux-x64-gnu@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/swc-linux-x64-gnu@npm:16.3.4"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/swc-linux-x64-musl@npm:16.3.3"
+"@next/swc-linux-x64-musl@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/swc-linux-x64-musl@npm:16.3.4"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/swc-win32-arm64-msvc@npm:16.3.3"
+"@next/swc-win32-arm64-msvc@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/swc-win32-arm64-msvc@npm:16.3.4"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:16.3.3":
-  version: 16.3.3
-  resolution: "@next/swc-win32-x64-msvc@npm:16.3.3"
+"@next/swc-win32-x64-msvc@npm:16.3.4":
+  version: 16.3.4
+  resolution: "@next/swc-win32-x64-msvc@npm:16.3.4"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -906,12 +906,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/user-event@npm:14.6.6":
-  version: 14.6.6
-  resolution: "@testing-library/user-event@npm:14.6.6"
+"@testing-library/user-event@npm:14.6.7":
+  version: 14.6.7
+  resolution: "@testing-library/user-event@npm:14.6.7"
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
-  checksum: 10c0/2cb82d3a364a2a29da19bb5d2a614aedaa474ac6f599a42fc28c1926056f7b91f5cec37b33452bafcb3f6b37a950024da289dea88ead3c2056c6005c91c7f942
+  checksum: 10c0/21f5e01bea2699b069947ae06d0b0fbabe0e90d2a2206b8f56a3f46126d09bd85320cba3fd3910c4d18710b1873e6966fb9021668966c615aaa14bf35d7df3ef
   languageName: node
   linkType: hard
 
@@ -964,12 +964,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:19.2.5":
-  version: 19.2.5
-  resolution: "@types/react-dom@npm:19.2.5"
+"@types/react-dom@npm:19.2.7":
+  version: 19.2.7
+  resolution: "@types/react-dom@npm:19.2.7"
   peerDependencies:
     "@types/react": ^19.2.0
-  checksum: 10c0/7a59467b043debf392d109daa1ba672e791f20ce6f24ae81fb54715f890f8119d24967e61e3644b6307428603b695b7d59e69eaf531bd1963a74a6cb462f5f49
+  checksum: 10c0/226ab7e2b62114125e2276b3dcc3a25060177a673f8abadb7e31f395003de72ad68075c6edc5f51b02dd1e47443920ee030239c474c47fad075ded7410836909
   languageName: node
   linkType: hard
 
@@ -1911,24 +1911,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:16.3.3":
-  version: 16.3.3
-  resolution: "next@npm:16.3.3"
+"next@npm:16.3.4":
+  version: 16.3.4
+  resolution: "next@npm:16.3.4"
   dependencies:
-    "@next/env": "npm:16.3.3"
-    "@next/swc-darwin-arm64": "npm:16.3.3"
-    "@next/swc-darwin-x64": "npm:16.3.3"
-    "@next/swc-linux-arm64-gnu": "npm:16.3.3"
-    "@next/swc-linux-arm64-musl": "npm:16.3.3"
-    "@next/swc-linux-x64-gnu": "npm:16.3.3"
-    "@next/swc-linux-x64-musl": "npm:16.3.3"
-    "@next/swc-win32-arm64-msvc": "npm:16.3.3"
-    "@next/swc-win32-x64-msvc": "npm:16.3.3"
+    "@next/env": "npm:16.3.4"
+    "@next/swc-darwin-arm64": "npm:16.3.4"
+    "@next/swc-darwin-x64": "npm:16.3.4"
+    "@next/swc-linux-arm64-gnu": "npm:16.3.4"
+    "@next/swc-linux-arm64-musl": "npm:16.3.4"
+    "@next/swc-linux-x64-gnu": "npm:16.3.4"
+    "@next/swc-linux-x64-musl": "npm:16.3.4"
+    "@next/swc-win32-arm64-msvc": "npm:16.3.4"
+    "@next/swc-win32-x64-msvc": "npm:16.3.4"
     "@swc/helpers": "npm:0.5.23"
     baseline-browser-mapping: "npm:^2.9.19"
     caniuse-lite: "npm:^1.0.30001579"
     postcss: "npm:8.5.23"
-    sharp: "npm:^0.35.3"
+    sharp: "npm:^0.35.4"
     styled-jsx: "npm:5.1.6"
   peerDependencies:
     "@opentelemetry/api": ^1.1.0
@@ -1967,7 +1967,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10c0/2c8c27085771fa522468a69ecaae9a7bc603fb1e6e6badfd9fb22b85a8085d3285e9af3d6a457012780ff2c778b983705fa71a2da5d1ba2282aa6134c4d0e2ec
+  checksum: 10c0/e4f2f079159201c205ba373e34f9517d581947ed0cf67860d24a81073d8e388cb041b5fbc0d4a527e1523f234d14f1d3d17dee13f930ec29f2c23abb406d7508
   languageName: node
   linkType: hard
 
@@ -2013,19 +2013,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ours-nextjs-example@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:2.5.11"
+    "@biomejs/biome": "npm:2.5.12"
     "@oursprivacy/cdp-sdk": "npm:1.0.7"
     "@testing-library/dom": "npm:10.4.1"
     "@testing-library/jest-dom": "npm:6.9.1"
     "@testing-library/react": "npm:16.3.3"
-    "@testing-library/user-event": "npm:14.6.6"
+    "@testing-library/user-event": "npm:14.6.7"
     "@types/node": "npm:25.9.5"
     "@types/react": "npm:19.2.18"
-    "@types/react-dom": "npm:19.2.5"
+    "@types/react-dom": "npm:19.2.7"
     "@vitejs/plugin-react": "npm:6.1.1"
     "@vitest/coverage-v8": "npm:4.1.11"
     jsdom: "npm:29.1.1"
-    next: "npm:16.3.3"
+    next: "npm:16.3.4"
     react: "npm:19.2.8"
     react-dom: "npm:19.2.8"
     typescript: "npm:6.0.3"
