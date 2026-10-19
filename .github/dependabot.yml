@@ -54,3 +54,6 @@ updates:
       - dependency-name: "*"
         update-types:
           - "version-update:semver-major"
+      # Keep Node types aligned with the supported CI runtime.
+      - dependency-name: "@types/node"
+        versions: [">=25"]
