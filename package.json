@@ -13,26 +13,26 @@
 		"lint:fix": "biome check --write ."
 	},
 	"dependencies": {
-		"@oursprivacy/cdp-sdk": "1.0.7",
-		"next": "16.4.0",
-		"react": "19.3.0",
-		"react-dom": "19.3.0"
+		"@oursprivacy/cdp-sdk": "1.0.9",
+		"next": "16.4.2",
+		"react": "19.3.1",
+		"react-dom": "19.3.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.15",
 		"@testing-library/dom": "10.4.2",
 		"@testing-library/jest-dom": "6.9.1",
 		"@testing-library/react": "16.3.3",
-		"@testing-library/user-event": "14.6.7",
+		"@testing-library/user-event": "14.6.8",
 		"@types/node": "24.19.2",
 		"@types/react": "19.3.0",
 		"@types/react-dom": "19.3.0",
 		"@vitejs/plugin-react": "6.1.2",
-		"@vitest/coverage-v8": "4.1.11",
+		"@vitest/coverage-v8": "4.1.12",
 		"jsdom": "29.1.1",
 		"typescript": "6.0.3",
 		"vite": "8.3.4",
-		"vitest": "4.1.11"
+		"vitest": "4.1.12"
 	},
 	"resolutions": {
 		"sharp": "0.35.5"
