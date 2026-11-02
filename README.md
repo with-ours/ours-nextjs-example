@@ -38,20 +38,20 @@ The recommended starting point. This layout injects the CDP loader snippet using
 import Script from 'next/script';
 
 export default function Layout({ children }) {
-  return (
-    <>
-      <Script
-        id="ours-cdp"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          // Paste your snippet from the Ours Privacy dashboard here.
-          // Go to app.oursprivacy.com → Settings → Install to copy it.
-          __html: `...`,
-        }}
-      />
-      {children}
-    </>
-  );
+	return (
+		<>
+			<Script
+				id="ours-cdp"
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					// Paste your snippet from the Ours Privacy dashboard here.
+					// Go to app.oursprivacy.com → Settings → Install to copy it.
+					__html: `...`,
+				}}
+			/>
+			{children}
+		</>
+	);
 }
 ```
 
