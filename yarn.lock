@@ -654,10 +654,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oursprivacy/cdp-sdk@npm:1.0.11":
-  version: 1.0.11
-  resolution: "@oursprivacy/cdp-sdk@npm:1.0.11"
-  checksum: 10c0/29fcee2d77419494048e627258836515f3080c6776acbfcbf7e732440452abab6b35af9cc674f6eddc19bda2a718d99b36e0563fffce62f9d256111102952fda
+"@oursprivacy/cdp-sdk@npm:1.0.12":
+  version: 1.0.12
+  resolution: "@oursprivacy/cdp-sdk@npm:1.0.12"
+  checksum: 10c0/0f740698da686602ebe161600131ada6e013d5811770cc36f3e8f9dbf7ab1acbe778b8e5be2505ffe46a9fa8cf6fae43201b302978d5b39359a6b1f12c6d3e0c
   languageName: node
   linkType: hard
 
@@ -1741,7 +1741,7 @@ __metadata:
   resolution: "ours-nextjs-example@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.6.6"
-    "@oursprivacy/cdp-sdk": "npm:1.0.11"
+    "@oursprivacy/cdp-sdk": "npm:1.0.12"
     "@testing-library/dom": "npm:10.4.2"
     "@testing-library/jest-dom": "npm:7.0.1"
     "@testing-library/react": "npm:16.3.3"
